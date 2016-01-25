@@ -4,13 +4,10 @@ import com.dubu.proj.configration.TestConfiguration;
 import com.dubu.proj.dao.CustomerDao;
 import com.dubu.proj.dto.Customer;
 import com.querydsl.core.types.QBean;
-import com.querydsl.example.sql.QCustomer;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
@@ -46,8 +43,6 @@ public class CustomerDaoTest {
 
         Customer customer = new Customer();
         String name = customer.getName();
-
-
     }
 
     public void save() {
@@ -61,9 +56,6 @@ public class CustomerDaoTest {
     @Test
     public void 찾아라() {
 
-//        CustomerDao customerDao  =  new CustomerDao();
-        Integer id = 10;
-//        final List<Customer> all = customerDao.findAll(customer.id.eq(id));
         final List<Customer> all = customerDao.findAll();
         System.out.println(all);
     }

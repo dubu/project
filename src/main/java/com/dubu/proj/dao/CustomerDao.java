@@ -26,20 +26,9 @@ public class CustomerDao {
 
     public List<Customer> findAll(Predicate... where) {
 
-//        final List<Customer> fetch = queryFactory.select(customerBean)
-//                .where(where)
-//                .fetch();
-//
-//        return fetch;
-
-//        final List<Customer> list = queryFactory.from(QCustomer.c)
-//                .where(where)
-//                .transform(GroupBy.groupBy(QCustomer.c.id).list(customerBean));
-
-
         List<Customer> fetch = queryFactory.select(customerBean)
                 .from(QCustomer.customer)
-//                .where(where)
+                .where(where)
                 .fetch();
 
         return fetch;
